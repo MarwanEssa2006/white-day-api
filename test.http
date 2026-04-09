@@ -1,0 +1,251 @@
+@baseUrl = http://localhost:8000/api
+@token = PUT_YOUR_TOKEN_HERE_AFTER_LOGIN
+
+
+### ── AUTH ─────────────────────────────────────────────
+
+### Register
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+    "first_name": "Ahmed",
+    "last_name": "Ali",
+    "email": "ahmed@test.com",
+    "phone": "01012345678",
+    "password": "password123",
+    "password_confirmation": "password123"
+}
+
+### Login
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "ahmed@test.com",
+    "password": "password123"
+}
+
+### Get My Profile
+GET {{baseUrl}}/me
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Logout
+POST {{baseUrl}}/logout
+Authorization: Bearer {{token}}
+Accept: application/json
+
+
+### ── SERVICES ──────────────────────────────────────────
+
+### Get All Services
+GET http://127.0.0.1:8000/api/services
+Accept: application/json
+
+### Get Single Service
+GET http://127.0.0.1:8000/api/services/1
+Accept: application/json
+
+### Filter by City
+GET http://127.0.0.1:8000/api/services?city=Cairo
+Accept: application/json
+
+### Search by Name
+GET http://127.0.0.1:8000/api/services?search=crystal
+Accept: application/json
+
+### Filter by Max Price
+GET http://127.0.0.1:8000/api/services?max_price=5000
+Accept: application/json
+
+
+
+
+### Login
+POST http://127.0.0.1:8000/api/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "@test.com",
+    "password": "password123"
+}
+###  Create a Booking
+POST http://127.0.0.1:8000/api/bookings
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Accept: application/json
+
+{
+    "booking_date": "2026-05-01",
+    "delivery_date": "2026-06-15",
+    "notes": "Please add extra decoration",
+    "services": [
+        { "service_id": 1, "quantity": 1 },
+        { "service_id": 9, "quantity": 1 }
+    ]
+}
+
+### Get My Bookings
+GET http://127.0.0.1:8000/api/bookings
+Authorization: Bearer 6|msF0EQXevqUEDxSuOXjyxLIXSLG7W5AFRFypZv6D79ee511d
+Accept: application/json
+
+### Get Single Booking
+GET http://127.0.0.1:8000/api/bookings/110
+Authorization: Bearer 6|msF0EQXevqUEDxSuOXjyxLIXSLG7W5AFRFypZv6D79ee511d
+Accept: application/json
+
+### Cancel a Booking
+PUT http://127.0.0.1:8000/api/bookings/110/cancel
+Authorization: Bearer 6|msF0EQXevqUEDxSuOXjyxLIXSLG7W5AFRFypZv6D79ee511d
+Accept: application/json
+
+
+
+### Register
+POST http://127.0.0.1:8000/api/register
+Content-Type: application/json
+Accept: application/json
+
+{
+    "first_name": "Ahmed",
+    "last_name": "Ali",
+    "email": "dd@test.com",
+    "phone": "01012345678",
+    "password": "password123",
+    "password_confirmation": "password123",
+    "role": "customer"
+}
+
+### Login
+POST http://127.0.0.1:8000/api/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "ahmed.ali@gmail.com",
+    "password": "password123"
+}
+
+
+### Create Booking
+POST http://127.0.0.1:8000/api/bookings
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 6|msF0EQXevqUEDxSuOXjyxLIXSLG7W5AFRFypZv6D79ee511d
+
+{
+    "booking_date": "2026-05-01",
+    "delivery_date": "2026-06-15",
+    "notes": "Please add extra decoration",
+    "services": [
+        { "service_id": 1, "quantity": 1 },
+        { "service_id": 9, "quantity": 1 }
+    ]
+}
+
+
+@baseUrl = http://127.0.0.1:8000/api
+@token = PASTE_TOKEN_HERE
+
+### 1 - Login
+POST {{baseUrl}}/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "AHnnn@test.com",
+    "password": "password123"
+}
+
+### 2 - Create Booking
+POST {{baseUrl}}/bookings
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Accept: application/json
+
+{
+    "booking_date": "2026-05-01",
+    "delivery_date": "2026-06-15",
+    "notes": "Please add extra decoration",
+    "services": [
+        { "service_id": 1, "quantity": 1 },
+        { "service_id": 9, "quantity": 1 }
+    ]
+}
+
+### 3 - Get My Bookings
+GET {{baseUrl}}/bookings
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### 4 - Get Single Booking
+GET {{baseUrl}}/bookings/1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### 5 - Cancel Booking
+PUT {{baseUrl}}/bookings/1/cancel
+Authorization: Bearer {{token}}
+Accept: application/json
+
+@baseUrl = http://127.0.0.1:8000/api
+@token = PASTE_TOKEN_HERE
+
+### 1 - Login
+POST {{baseUrl}}/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "AHnnn@test.com",
+    "password": "password123"
+}
+
+### 2 - Create Booking
+POST {{baseUrl}}/bookings
+Content-Type: application/json
+Authorization: Bearer {{token}}
+Accept: application/json
+
+{
+    "booking_date": "2026-05-01",
+    "delivery_date": "2026-06-15",
+    "notes": "Please add extra decoration",
+    "services": [
+        { "service_id": 1, "quantity": 1 },
+        { "service_id": 9, "quantity": 1 }
+    ]
+}
+
+### 3 - Get My Bookings
+GET {{baseUrl}}/bookings
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### 4 - Get Single Booking
+GET {{baseUrl}}/bookings/1
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### 5 - Cancel Booking
+PUT {{baseUrl}}/bookings/1/cancel
+Authorization: Bearer {{token}}
+Accept: application/json
+
+### Test Validation: Booking with past date and wrong service
+POST {{baseUrl}}/bookings
+Content-Type: application/json
+Authorization: Bearer 6|msF0EQXevqUEDxSuOXjyxLIXSLG7W5AFRFypZv6D79ee511d
+Accept: application/json
+
+{
+    "booking_date": "2020-01-01", 
+    "delivery_date": "2020-01-02",
+    "notes": "Testing validation",
+    "services": [
+        { "service_id": 999999, "quantity": -1 }
+    ]
+}
